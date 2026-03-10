@@ -15,15 +15,14 @@ spec:
       imagePullSecrets:
       - name: dockerhub-secret
       containers:
-        - name: mysql
-          image: mariadb:10.6
-          ports:
-          - containerPort: 3306
-          env:
-          - name: MYSQL_ROOT_PASSWORD
-            value: password
-          - name: MYSQL_DATABASE
-            value: employees
+      - name: mysql
+        image: vinayak432/mysql:latest
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
+
 ---
 
 apiVersion: apps/v1
